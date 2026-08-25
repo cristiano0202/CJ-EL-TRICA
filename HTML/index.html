@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CJ Elétrica | Dashboard</title>
+  <link rel="stylesheet" href="style.css?v=14">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">CJ</div>
+        <div>
+          <strong>CJ ELÉTRICA</strong>
+          <span>Gestão técnica</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Menu principal">
+        <a class="nav-item" href="#clientes" data-screen-link="clientes">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3ZM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3Zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13Zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5Z"/></svg>
+          </span>
+          <span>Clientes</span>
+        </a>
+        <a class="nav-item" href="#visitas" data-screen-link="visitas">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 7.8L6.47 7 12 4.24 17.53 7 12 9.8ZM4 10v7l8 5 8-5v-7l-8 5-8-5Zm2 3.62 5 3.13v2.5l-5-3.12v-2.51Zm12 2.51-5 3.12v-2.5l5-3.13v2.51Z"/></svg>
+          </span>
+          <span>Visitas Técnicas</span>
+        </a>
+        <a class="nav-item" href="#orcamentos" data-screen-link="orcamentos">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v18l-3-2-3 2-3-2-3 2-2-1.34V4a2 2 0 0 1 2-2Zm0 3v13.26l3-2 3 2 3-2 1 .67V5H7Zm2 3h6v2H9V8Zm0 4h6v2H9v-2Z"/></svg>
+          </span>
+          <span>Orçamentos</span>
+        </a>
+        <a class="nav-item" href="#ordens" data-screen-link="ordens">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM8 12h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>
+          </span>
+          <span>Ordens de Serviço</span>
+        </a>
+        <a class="nav-item" href="#agenda" data-screen-link="agenda">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm13 8H4v10h16V10ZM4 8h16V6H4v2Zm3 5h4v4H7v-4Z"/></svg>
+          </span>
+          <span>Agenda</span>
+        </a>
+        <a class="nav-item" href="#materiais" data-screen-link="materiais">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v4H4V4Zm1 6h14l-1 10H6L5 10Zm4 2v6h2v-6H9Zm4 0v6h2v-6h-2Z"/></svg>
+          </span>
+          <span>Materiais</span>
+        </a>
+        <a class="nav-item" href="#financeiro" data-screen-link="financeiro">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 4h16V7H4v2Zm0 3v5h16v-5H4Zm2 2h5v2H6v-2Z"/></svg>
+          </span>
+          <span>Financeiro</span>
+        </a>
+        <a class="nav-item" href="#manutencoes" data-screen-link="manutencoes">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m22 19.6-6.3-6.3a7 7 0 0 0-8.95-8.95l4.7 4.7-2.4 2.4-4.7-4.7a7 7 0 0 0 8.95 8.95l6.3 6.3L22 19.6Z"/></svg>
+          </span>
+          <span>Manutenções</span>
+        </a>
+        <a class="nav-item" href="#relatorios" data-screen-link="relatorios">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v16H3V5a2 2 0 0 1 2-2Zm2 12h3V8H7v7Zm5 0h3V5h-3v10Zm5 0h2v-4h-2v4ZM5 19h14v-2H5v2Z"/></svg>
+          </span>
+          <span>Relatórios</span>
+        </a>
+        <a class="nav-item active" href="#dashboard" data-screen-link="dashboard" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 13h7V4H4v9Zm0 7h7v-5H4v5Zm9 0h7v-9h-7v9Zm0-16v5h7V4h-7Z"/></svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-item" href="#configuracoes" data-screen-link="configuracoes">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65-2-3.46-2.49 1a7.12 7.12 0 0 0-1.7-.98L15 3h-4l-.35 2.93c-.6.24-1.17.57-1.7.98l-2.49-1-2 3.46 2.11 1.65c-.04.32-.07.65-.07.98s.02.66.07.98l-2.11 1.65 2 3.46 2.49-1c.52.41 1.09.74 1.7.98L11 21h4l.35-2.93c.6-.24 1.17-.57 1.7-.98l2.49 1 2-3.46-2.11-1.65ZM13 15.5A3.5 3.5 0 1 1 13 8a3.5 3.5 0 0 1 0 7.5Z"/></svg>
+          </span>
+          <span>Configurações</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="mobile-overlay" data-close-menu></div>
+
+    <main class="main-content" id="app-main">
+      <section class="view-screen active" id="dashboard" data-screen="dashboard">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Sistema de gestão</p>
+            <h1>Dashboard</h1>
+          </div>
+
+          <div class="operator-card" aria-label="Perfil fictício">
+            <span class="status-dot"></span>
+            <div>
+              <strong>Equipe CJ</strong>
+              <span>Plantão operacional</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="hero-panel" aria-label="Resumo operacional">
+          <div class="hero-copy">
+            <p>Visão geral do dia</p>
+            <h2>Serviços, agenda e financeiro em um só painel.</h2>
+            <span>Dados fictícios para validação visual da primeira etapa.</span>
+          </div>
+          <div class="hero-meter" aria-label="Indicador fictício de produtividade">
+            <strong>82%</strong>
+            <span>capacidade da equipe</span>
+          </div>
+        </section>
+
+        <section class="summary-grid" aria-label="Cards de resumo">
+          <article class="summary-card">
+            <div class="card-icon service"></div>
+            <span>Serviços em andamento</span>
+            <strong>14</strong>
+            <small>4 com prioridade alta</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon done"></div>
+            <span>Serviços concluídos</span>
+            <strong>38</strong>
+            <small>+12% neste mês</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Orçamentos aguardando</span>
+            <strong>9</strong>
+            <small>R$ 18.750 em análise</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon clients"></div>
+            <span>Clientes cadastrados</span>
+            <strong>126</strong>
+            <small>7 novos cadastros</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon receive"></div>
+            <span>Valores a receber</span>
+            <strong>R$ 24.380</strong>
+            <small>12 títulos em aberto</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon revenue"></div>
+            <span>Receita do mês</span>
+            <strong>R$ 41.920</strong>
+            <small>Meta mensal: R$ 55.000</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon expense"></div>
+            <span>Despesas do mês</span>
+            <strong>R$ 16.480</strong>
+            <small>Materiais e deslocamentos</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon profit"></div>
+            <span>Lucro do mês</span>
+            <strong>R$ 25.440</strong>
+            <small>Margem fictícia de 60,6%</small>
+          </article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel upcoming-services">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Agenda operacional</p>
+                <h2>Próximos serviços</h2>
+              </div>
+              <span class="panel-badge">Hoje</span>
+            </div>
+
+            <div class="service-list">
+              <div class="service-item">
+                <time datetime="2026-08-25T08:30">08:30</time>
+                <div>
+                  <strong>Instalação de quadro elétrico</strong>
+                  <span>Condomínio Jardim Norte - Técnico Marcos</span>
+                </div>
+                <span class="priority high">Alta</span>
+              </div>
+              <div class="service-item">
+                <time datetime="2026-08-25T10:00">10:00</time>
+                <div>
+                  <strong>Visita técnica para orçamento</strong>
+                  <span>Loja Prime Center - Técnico Elaine</span>
+                </div>
+                <span class="priority medium">Média</span>
+              </div>
+              <div class="service-item">
+                <time datetime="2026-08-25T13:30">13:30</time>
+                <div>
+                  <strong>Manutenção preventiva</strong>
+                  <span>Clínica São Bento - Técnico Roberto</span>
+                </div>
+                <span class="priority normal">Normal</span>
+              </div>
+              <div class="service-item">
+                <time datetime="2026-08-25T16:00">16:00</time>
+                <div>
+                  <strong>Troca de disjuntores</strong>
+                  <span>Residencial Vila Clara - Técnico Marcos</span>
+                </div>
+                <span class="priority high">Alta</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel recent-orders">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Controle técnico</p>
+                <h2>Ordens de serviço recentes</h2>
+              </div>
+              <span class="panel-badge muted">Últimas 24h</span>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>OS</th>
+                    <th>Cliente</th>
+                    <th>Serviço</th>
+                    <th>Status</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#OS-1048</td>
+                    <td>Mercado Bom Preço</td>
+                    <td>Revisão elétrica</td>
+                    <td><span class="status in-progress">Em andamento</span></td>
+                    <td>R$ 2.350</td>
+                  </tr>
+                  <tr>
+                    <td>#OS-1047</td>
+                    <td>Casa Almeida</td>
+                    <td>Instalação 220V</td>
+                    <td><span class="status completed">Concluída</span></td>
+                    <td>R$ 890</td>
+                  </tr>
+                  <tr>
+                    <td>#OS-1046</td>
+                    <td>Oficina Delta</td>
+                    <td>Manutenção de painel</td>
+                    <td><span class="status pending">Aguardando</span></td>
+                    <td>R$ 1.720</td>
+                  </tr>
+                  <tr>
+                    <td>#OS-1045</td>
+                    <td>Edifício Solaris</td>
+                    <td>Emergência elétrica</td>
+                    <td><span class="status in-progress">Em andamento</span></td>
+                    <td>R$ 3.600</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="view-screen" id="clientes" data-screen="clientes">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Cadastro e relacionamento</p>
+            <h1>Clientes</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">+</span>
+            Novo cliente
+          </button>
+        </header>
+
+        <section class="client-summary-grid" aria-label="Resumo de clientes">
+          <article class="summary-card">
+            <div class="card-icon clients"></div>
+            <span>Total de clientes</span>
+            <strong>126</strong>
+            <small>Cadastro visual fictício</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon done"></div>
+            <span>Clientes ativos</span>
+            <strong>98</strong>
+            <small>Com serviços nos últimos 90 dias</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Orçamentos em aberto</span>
+            <strong>17</strong>
+            <small>Aguardando retorno do cliente</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon revenue"></div>
+            <span>Receita vinculada</span>
+            <strong>R$ 41.920</strong>
+            <small>Total fictício do mês atual</small>
+          </article>
+        </section>
+
+        <section class="panel client-panel">
+          <div class="panel-header client-panel-header">
+            <div>
+              <p class="eyebrow">Base de clientes</p>
+              <h2>Clientes cadastrados</h2>
+            </div>
+            <div class="client-tools" aria-label="Filtros visuais">
+              <label class="search-field">
+                <span aria-hidden="true">⌕</span>
+                <input type="search" placeholder="Buscar cliente" aria-label="Buscar cliente">
+              </label>
+              <select aria-label="Filtrar status">
+                <option>Todos</option>
+                <option>Ativos</option>
+                <option>Aguardando</option>
+                <option>Inativos</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="clients-table">
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Contato</th>
+                  <th>Tipo</th>
+                  <th>Último serviço</th>
+                  <th>Status</th>
+                  <th>Valor em aberto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <span class="client-avatar">MB</span>
+                      <div>
+                        <strong>Mercado Bom Preço</strong>
+                        <small>Av. Central, 1480 - Centro</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>(11) 98824-1120</td>
+                  <td>Comercial</td>
+                  <td>Revisão elétrica</td>
+                  <td><span class="status in-progress">Ativo</span></td>
+                  <td>R$ 2.350</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <span class="client-avatar">CA</span>
+                      <div>
+                        <strong>Casa Almeida</strong>
+                        <small>Rua das Laranjeiras, 82</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>(11) 97611-4098</td>
+                  <td>Residencial</td>
+                  <td>Instalação 220V</td>
+                  <td><span class="status completed">Em dia</span></td>
+                  <td>R$ 0</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <span class="client-avatar">OD</span>
+                      <div>
+                        <strong>Oficina Delta</strong>
+                        <small>Rua Industrial, 430 - Galpão 2</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>(11) 99452-7813</td>
+                  <td>Comercial</td>
+                  <td>Manutenção de painel</td>
+                  <td><span class="status pending">Aguardando</span></td>
+                  <td>R$ 1.720</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <span class="client-avatar">ES</span>
+                      <div>
+                        <strong>Edifício Solaris</strong>
+                        <small>Rua Horizonte, 901 - Bloco A</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>(11) 3332-8910</td>
+                  <td>Condomínio</td>
+                  <td>Emergência elétrica</td>
+                  <td><span class="status in-progress">Ativo</span></td>
+                  <td>R$ 3.600</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <span class="client-avatar">CS</span>
+                      <div>
+                        <strong>Clínica São Bento</strong>
+                        <small>Av. Saúde, 612 - Sala 14</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>(11) 3055-1188</td>
+                  <td>Comercial</td>
+                  <td>Manutenção preventiva</td>
+                  <td><span class="status completed">Em dia</span></td>
+                  <td>R$ 0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="client-grid">
+          <article class="panel client-note-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Atendimento</p>
+                <h2>Retornos pendentes</h2>
+              </div>
+              <span class="panel-badge muted">5 itens</span>
+            </div>
+            <div class="note-list">
+              <div class="note-item">
+                <strong>Enviar orçamento revisado</strong>
+                <span>Oficina Delta - prazo fictício hoje</span>
+              </div>
+              <div class="note-item">
+                <strong>Confirmar visita técnica</strong>
+                <span>Residencial Vila Clara - amanhã 09:00</span>
+              </div>
+              <div class="note-item">
+                <strong>Solicitar aceite do serviço</strong>
+                <span>Loja Prime Center - orçamento #OR-283</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel client-note-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Classificação</p>
+                <h2>Tipos de cliente</h2>
+              </div>
+              <span class="panel-badge">Visual</span>
+            </div>
+            <div class="type-bars" aria-label="Distribuição fictícia de tipos de cliente">
+              <div class="type-row">
+                <span>Residencial</span>
+                <div><i style="width: 46%"></i></div>
+                <strong>58</strong>
+              </div>
+              <div class="type-row">
+                <span>Comercial</span>
+                <div><i style="width: 38%"></i></div>
+                <strong>48</strong>
+              </div>
+              <div class="type-row">
+                <span>Condomínio</span>
+                <div><i style="width: 16%"></i></div>
+                <strong>20</strong>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="view-screen" id="visitas" data-screen="visitas">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Atendimento técnico</p>
+            <h1>Visitas Técnicas</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">+</span>
+            Nova visita
+          </button>
+        </header>
+
+        <section class="visit-summary-grid" aria-label="Resumo de visitas técnicas">
+          <article class="summary-card">
+            <div class="card-icon service"></div>
+            <span>Visitas hoje</span>
+            <strong>6</strong>
+            <small>3 em rota e 3 agendadas</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Aguardando orçamento</span>
+            <strong>11</strong>
+            <small>Após análise técnica</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon done"></div>
+            <span>Vistorias concluídas</span>
+            <strong>24</strong>
+            <small>Total fictício do mês</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon clients"></div>
+            <span>Técnicos disponíveis</span>
+            <strong>4</strong>
+            <small>Equipe para novos chamados</small>
+          </article>
+        </section>
+
+        <section class="visit-layout">
+          <article class="panel visit-table-panel">
+            <div class="panel-header client-panel-header">
+              <div>
+                <p class="eyebrow">Controle de campo</p>
+                <h2>Visitas técnicas cadastradas</h2>
+              </div>
+              <div class="client-tools" aria-label="Filtros visuais de visitas">
+                <label class="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input type="search" placeholder="Buscar visita" aria-label="Buscar visita">
+                </label>
+                <select aria-label="Filtrar visitas">
+                  <option>Todas</option>
+                  <option>Agendadas</option>
+                  <option>Em rota</option>
+                  <option>Concluídas</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="visit-table">
+                <thead>
+                  <tr>
+                    <th>Visita</th>
+                    <th>Cliente</th>
+                    <th>Tipo</th>
+                    <th>Técnico</th>
+                    <th>Horário</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#VT-312</td>
+                    <td>Loja Prime Center</td>
+                    <td>Levantamento para orçamento</td>
+                    <td>Elaine</td>
+                    <td>10:00</td>
+                    <td><span class="status in-progress">Em rota</span></td>
+                  </tr>
+                  <tr>
+                    <td>#VT-311</td>
+                    <td>Residencial Vila Clara</td>
+                    <td>Avaliação de disjuntores</td>
+                    <td>Marcos</td>
+                    <td>16:00</td>
+                    <td><span class="status pending">Agendada</span></td>
+                  </tr>
+                  <tr>
+                    <td>#VT-310</td>
+                    <td>Oficina Delta</td>
+                    <td>Inspeção de painel</td>
+                    <td>Roberto</td>
+                    <td>09:00</td>
+                    <td><span class="status completed">Concluída</span></td>
+                  </tr>
+                  <tr>
+                    <td>#VT-309</td>
+                    <td>Clínica São Bento</td>
+                    <td>Manutenção preventiva</td>
+                    <td>Diego</td>
+                    <td>13:30</td>
+                    <td><span class="status pending">Aguardando</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="visit-side">
+            <article class="panel visit-route-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Roteiro</p>
+                  <h2>Próximas visitas</h2>
+                </div>
+                <span class="panel-badge">Hoje</span>
+              </div>
+              <div class="inspection-list">
+                <div class="inspection-item high">
+                  <time>10:00</time>
+                  <div>
+                    <strong>Loja Prime Center</strong>
+                    <span>Verificar carga instalada e pontos novos</span>
+                  </div>
+                </div>
+                <div class="inspection-item normal">
+                  <time>13:30</time>
+                  <div>
+                    <strong>Clínica São Bento</strong>
+                    <span>Conferir quadro e aterramento</span>
+                  </div>
+                </div>
+                <div class="inspection-item medium">
+                  <time>16:00</time>
+                  <div>
+                    <strong>Residencial Vila Clara</strong>
+                    <span>Avaliar troca de disjuntores</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel checklist-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Checklist</p>
+                  <h2>Itens da vistoria</h2>
+                </div>
+                <span class="panel-badge muted">Modelo</span>
+              </div>
+              <div class="checklist-list">
+                <div class="check-item checked">
+                  <span aria-hidden="true"></span>
+                  <strong>Fotos do quadro elétrico</strong>
+                </div>
+                <div class="check-item checked">
+                  <span aria-hidden="true"></span>
+                  <strong>Medição de carga</strong>
+                </div>
+                <div class="check-item">
+                  <span aria-hidden="true"></span>
+                  <strong>Observações para orçamento</strong>
+                </div>
+                <div class="check-item">
+                  <span aria-hidden="true"></span>
+                  <strong>Assinatura do cliente</strong>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view-screen" id="orcamentos" data-screen="orcamentos">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Propostas comerciais</p>
+            <h1>Orçamentos</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">+</span>
+            Novo orçamento
+          </button>
+        </header>
+
+        <section class="budget-summary-grid" aria-label="Resumo de orçamentos">
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Orçamentos abertos</span>
+            <strong>17</strong>
+            <small>R$ 42.860 em propostas</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon done"></div>
+            <span>Aprovados no mês</span>
+            <strong>9</strong>
+            <small>R$ 28.740 convertidos</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon clients"></div>
+            <span>Aguardando cliente</span>
+            <strong>8</strong>
+            <small>Retorno pendente</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon revenue"></div>
+            <span>Ticket médio</span>
+            <strong>R$ 3.180</strong>
+            <small>Valor fictício por orçamento</small>
+          </article>
+        </section>
+
+        <section class="budget-layout">
+          <article class="panel budget-table-panel">
+            <div class="panel-header client-panel-header">
+              <div>
+                <p class="eyebrow">Controle comercial</p>
+                <h2>Orçamentos cadastrados</h2>
+              </div>
+              <div class="client-tools" aria-label="Filtros visuais de orçamentos">
+                <label class="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input type="search" placeholder="Buscar orçamento" aria-label="Buscar orçamento">
+                </label>
+                <select aria-label="Filtrar orçamento">
+                  <option>Todos</option>
+                  <option>Aguardando</option>
+                  <option>Aprovados</option>
+                  <option>Revisão</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="budget-table">
+                <thead>
+                  <tr>
+                    <th>Orçamento</th>
+                    <th>Cliente</th>
+                    <th>Serviço</th>
+                    <th>Emissão</th>
+                    <th>Status</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#OR-284</td>
+                    <td>Loja Prime Center</td>
+                    <td>Ampliação de carga</td>
+                    <td>25/08/2026</td>
+                    <td><span class="status pending">Aguardando</span></td>
+                    <td>R$ 6.450</td>
+                  </tr>
+                  <tr>
+                    <td>#OR-283</td>
+                    <td>Oficina Delta</td>
+                    <td>Manutenção de painel</td>
+                    <td>24/08/2026</td>
+                    <td><span class="status in-progress">Em revisão</span></td>
+                    <td>R$ 4.980</td>
+                  </tr>
+                  <tr>
+                    <td>#OR-282</td>
+                    <td>Residencial Vila Clara</td>
+                    <td>Troca de disjuntores</td>
+                    <td>23/08/2026</td>
+                    <td><span class="status completed">Aprovado</span></td>
+                    <td>R$ 1.720</td>
+                  </tr>
+                  <tr>
+                    <td>#OR-281</td>
+                    <td>Edifício Solaris</td>
+                    <td>Correção emergencial</td>
+                    <td>22/08/2026</td>
+                    <td><span class="status completed">Aprovado</span></td>
+                    <td>R$ 8.300</td>
+                  </tr>
+                  <tr>
+                    <td>#OR-280</td>
+                    <td>Clínica São Bento</td>
+                    <td>Preventiva mensal</td>
+                    <td>21/08/2026</td>
+                    <td><span class="status pending">Aguardando</span></td>
+                    <td>R$ 2.150</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="budget-side">
+            <article class="panel proposal-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Funil</p>
+                  <h2>Etapas dos orçamentos</h2>
+                </div>
+                <span class="panel-badge">Mês</span>
+              </div>
+              <div class="proposal-stages" aria-label="Funil visual de orçamentos">
+                <div class="stage-row">
+                  <span>Rascunho</span>
+                  <div><i style="width: 30%"></i></div>
+                  <strong>5</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Enviado</span>
+                  <div><i style="width: 66%"></i></div>
+                  <strong>11</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Aprovado</span>
+                  <div><i style="width: 54%"></i></div>
+                  <strong>9</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Revisão</span>
+                  <div><i style="width: 18%"></i></div>
+                  <strong>3</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel proposal-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Pendências</p>
+                  <h2>Próximos retornos</h2>
+                </div>
+                <span class="panel-badge muted">4 itens</span>
+              </div>
+              <div class="note-list">
+                <div class="note-item">
+                  <strong>Revisar materiais</strong>
+                  <span>Oficina Delta - orçamento #OR-283</span>
+                </div>
+                <div class="note-item">
+                  <strong>Confirmar aceite</strong>
+                  <span>Loja Prime Center - orçamento #OR-284</span>
+                </div>
+                <div class="note-item">
+                  <strong>Enviar proposta final</strong>
+                  <span>Clínica São Bento - preventiva mensal</span>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view-screen" id="ordens" data-screen="ordens">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Execução técnica</p>
+            <h1>Ordens de Serviço</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">+</span>
+            Nova OS
+          </button>
+        </header>
+
+        <section class="order-summary-grid" aria-label="Resumo de ordens de serviço">
+          <article class="summary-card">
+            <div class="card-icon service"></div>
+            <span>OS em andamento</span>
+            <strong>14</strong>
+            <small>5 com execução em campo</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon done"></div>
+            <span>OS concluídas</span>
+            <strong>38</strong>
+            <small>Total fictício do mês</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Aguardando material</span>
+            <strong>6</strong>
+            <small>Itens pendentes para compra</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon revenue"></div>
+            <span>Valor em execução</span>
+            <strong>R$ 31.260</strong>
+            <small>Serviços ativos fictícios</small>
+          </article>
+        </section>
+
+        <section class="order-layout">
+          <article class="panel order-table-panel">
+            <div class="panel-header client-panel-header">
+              <div>
+                <p class="eyebrow">Controle operacional</p>
+                <h2>Ordens cadastradas</h2>
+              </div>
+              <div class="client-tools" aria-label="Filtros visuais de ordens de serviço">
+                <label class="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input type="search" placeholder="Buscar OS" aria-label="Buscar ordem de serviço">
+                </label>
+                <select aria-label="Filtrar ordem de serviço">
+                  <option>Todas</option>
+                  <option>Em andamento</option>
+                  <option>Concluídas</option>
+                  <option>Aguardando material</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="order-table">
+                <thead>
+                  <tr>
+                    <th>OS</th>
+                    <th>Cliente</th>
+                    <th>Serviço</th>
+                    <th>Técnico</th>
+                    <th>Prazo</th>
+                    <th>Status</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#OS-1048</td>
+                    <td>Mercado Bom Preço</td>
+                    <td>Revisão elétrica geral</td>
+                    <td>Marcos</td>
+                    <td>25/08/2026</td>
+                    <td><span class="status in-progress">Em andamento</span></td>
+                    <td>R$ 2.350</td>
+                  </tr>
+                  <tr>
+                    <td>#OS-1047</td>
+                    <td>Casa Almeida</td>
+                    <td>Instalação 220V</td>
+                    <td>Diego</td>
+                    <td>24/08/2026</td>
+                    <td><span class="status completed">Concluída</span></td>
+                    <td>R$ 890</td>
+                  </tr>
+                  <tr>
+                    <td>#OS-1046</td>
+                    <td>Oficina Delta</td>
+                    <td>Manutenção de painel</td>
+                    <td>Roberto</td>
+                    <td>26/08/2026</td>
+                    <td><span class="status pending">Material</span></td>
+                    <td>R$ 1.720</td>
+                  </tr>
+                  <tr>
+                    <td>#OS-1045</td>
+                    <td>Edifício Solaris</td>
+                    <td>Correção emergencial</td>
+                    <td>Elaine</td>
+                    <td>25/08/2026</td>
+                    <td><span class="status in-progress">Em execução</span></td>
+                    <td>R$ 3.600</td>
+                  </tr>
+                  <tr>
+                    <td>#OS-1044</td>
+                    <td>Clínica São Bento</td>
+                    <td>Preventiva mensal</td>
+                    <td>Marcos</td>
+                    <td>28/08/2026</td>
+                    <td><span class="status pending">Agendada</span></td>
+                    <td>R$ 2.150</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="order-side">
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Prioridade</p>
+                  <h2>Fila de execução</h2>
+                </div>
+                <span class="panel-badge">Hoje</span>
+              </div>
+              <div class="inspection-list">
+                <div class="inspection-item high">
+                  <time>#1045</time>
+                  <div>
+                    <strong>Edifício Solaris</strong>
+                    <span>Correção emergencial no quadro principal</span>
+                  </div>
+                </div>
+                <div class="inspection-item medium">
+                  <time>#1048</time>
+                  <div>
+                    <strong>Mercado Bom Preço</strong>
+                    <span>Revisão elétrica geral em andamento</span>
+                  </div>
+                </div>
+                <div class="inspection-item normal">
+                  <time>#1044</time>
+                  <div>
+                    <strong>Clínica São Bento</strong>
+                    <span>Preventiva mensal programada</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Checklist</p>
+                  <h2>Execução da OS</h2>
+                </div>
+                <span class="panel-badge muted">Modelo</span>
+              </div>
+              <div class="checklist-list">
+                <div class="check-item checked">
+                  <span aria-hidden="true"></span>
+                  <strong>Confirmar cliente e endereço</strong>
+                </div>
+                <div class="check-item checked">
+                  <span aria-hidden="true"></span>
+                  <strong>Separar materiais e ferramentas</strong>
+                </div>
+                <div class="check-item">
+                  <span aria-hidden="true"></span>
+                  <strong>Registrar fotos do serviço</strong>
+                </div>
+                <div class="check-item">
+                  <span aria-hidden="true"></span>
+                  <strong>Coletar assinatura de conclusão</strong>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view-screen" id="materiais" data-screen="materiais">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Estoque operacional</p>
+            <h1>Materiais</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">+</span>
+            Novo material
+          </button>
+        </header>
+
+        <section class="material-summary-grid" aria-label="Resumo de materiais">
+          <article class="summary-card">
+            <div class="card-icon service"></div>
+            <span>Itens cadastrados</span>
+            <strong>248</strong>
+            <small>Materiais elétricos no estoque</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Estoque baixo</span>
+            <strong>12</strong>
+            <small>Precisam de reposição</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon done"></div>
+            <span>Entradas no mês</span>
+            <strong>36</strong>
+            <small>Compras fictícias lançadas</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon revenue"></div>
+            <span>Valor em estoque</span>
+            <strong>R$ 18.930</strong>
+            <small>Total visual estimado</small>
+          </article>
+        </section>
+
+        <section class="material-layout">
+          <article class="panel material-table-panel">
+            <div class="panel-header client-panel-header">
+              <div>
+                <p class="eyebrow">Almoxarifado</p>
+                <h2>Materiais cadastrados</h2>
+              </div>
+              <div class="client-tools" aria-label="Filtros visuais de materiais">
+                <label class="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input type="search" placeholder="Buscar material" aria-label="Buscar material">
+                </label>
+                <select aria-label="Filtrar materiais">
+                  <option>Todos</option>
+                  <option>Estoque baixo</option>
+                  <option>Cabos</option>
+                  <option>Disjuntores</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="material-table">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Material</th>
+                    <th>Categoria</th>
+                    <th>Estoque</th>
+                    <th>Mínimo</th>
+                    <th>Status</th>
+                    <th>Valor unit.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>MAT-018</td>
+                    <td>Cabo flexível 2,5mm</td>
+                    <td>Cabos</td>
+                    <td>180 m</td>
+                    <td>80 m</td>
+                    <td><span class="status completed">Normal</span></td>
+                    <td>R$ 3,40</td>
+                  </tr>
+                  <tr>
+                    <td>MAT-024</td>
+                    <td>Disjuntor bipolar 40A</td>
+                    <td>Disjuntores</td>
+                    <td>6 un</td>
+                    <td>10 un</td>
+                    <td><span class="status pending">Baixo</span></td>
+                    <td>R$ 42,90</td>
+                  </tr>
+                  <tr>
+                    <td>MAT-031</td>
+                    <td>Conduíte corrugado 3/4</td>
+                    <td>Infraestrutura</td>
+                    <td>95 m</td>
+                    <td>50 m</td>
+                    <td><span class="status completed">Normal</span></td>
+                    <td>R$ 2,80</td>
+                  </tr>
+                  <tr>
+                    <td>MAT-047</td>
+                    <td>Tomada 20A branca</td>
+                    <td>Acabamento</td>
+                    <td>14 un</td>
+                    <td>20 un</td>
+                    <td><span class="status pending">Baixo</span></td>
+                    <td>R$ 11,50</td>
+                  </tr>
+                  <tr>
+                    <td>MAT-052</td>
+                    <td>Quadro distribuição 24 disj.</td>
+                    <td>Quadros</td>
+                    <td>4 un</td>
+                    <td>3 un</td>
+                    <td><span class="status in-progress">Reservado</span></td>
+                    <td>R$ 189,00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="material-side">
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Reposição</p>
+                  <h2>Itens críticos</h2>
+                </div>
+                <span class="panel-badge muted">12 itens</span>
+              </div>
+              <div class="material-alert-list">
+                <div class="material-alert high">
+                  <strong>Disjuntor bipolar 40A</strong>
+                  <span>6 un disponíveis - mínimo 10</span>
+                </div>
+                <div class="material-alert medium">
+                  <strong>Tomada 20A branca</strong>
+                  <span>14 un disponíveis - mínimo 20</span>
+                </div>
+                <div class="material-alert normal">
+                  <strong>Terminal olhal 6mm</strong>
+                  <span>22 un disponíveis - mínimo 30</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Movimentações</p>
+                  <h2>Últimas saídas</h2>
+                </div>
+                <span class="panel-badge">Hoje</span>
+              </div>
+              <div class="note-list">
+                <div class="note-item">
+                  <strong>25 m de cabo 2,5mm</strong>
+                  <span>OS #1048 - Mercado Bom Preço</span>
+                </div>
+                <div class="note-item">
+                  <strong>2 disjuntores 40A</strong>
+                  <span>OS #1045 - Edifício Solaris</span>
+                </div>
+                <div class="note-item">
+                  <strong>8 tomadas 20A</strong>
+                  <span>OS #1047 - Casa Almeida</span>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view-screen" id="financeiro" data-screen="financeiro">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Gestão financeira</p>
+            <h1>Financeiro</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">+</span>
+            Novo lançamento
+          </button>
+        </header>
+
+        <section class="finance-summary-grid" aria-label="Resumo financeiro">
+          <article class="summary-card">
+            <div class="card-icon receive"></div>
+            <span>Valores a receber</span>
+            <strong>R$ 24.380</strong>
+            <small>12 títulos em aberto</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon revenue"></div>
+            <span>Receita do mês</span>
+            <strong>R$ 41.920</strong>
+            <small>Serviços e manutenções</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon expense"></div>
+            <span>Despesas do mês</span>
+            <strong>R$ 16.480</strong>
+            <small>Materiais, equipe e deslocamento</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon profit"></div>
+            <span>Lucro do mês</span>
+            <strong>R$ 25.440</strong>
+            <small>Resultado fictício atual</small>
+          </article>
+        </section>
+
+        <section class="finance-layout">
+          <article class="panel finance-table-panel">
+            <div class="panel-header client-panel-header">
+              <div>
+                <p class="eyebrow">Lançamentos</p>
+                <h2>Contas a receber e pagar</h2>
+              </div>
+              <div class="client-tools" aria-label="Filtros visuais financeiros">
+                <label class="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input type="search" placeholder="Buscar lançamento" aria-label="Buscar lançamento financeiro">
+                </label>
+                <select aria-label="Filtrar financeiro">
+                  <option>Todos</option>
+                  <option>A receber</option>
+                  <option>A pagar</option>
+                  <option>Vencidos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="finance-table">
+                <thead>
+                  <tr>
+                    <th>Documento</th>
+                    <th>Descrição</th>
+                    <th>Tipo</th>
+                    <th>Vencimento</th>
+                    <th>Status</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#REC-118</td>
+                    <td>OS #1048 - Mercado Bom Preço</td>
+                    <td>Receita</td>
+                    <td>28/08/2026</td>
+                    <td><span class="status pending">A receber</span></td>
+                    <td>R$ 2.350</td>
+                  </tr>
+                  <tr>
+                    <td>#REC-117</td>
+                    <td>OS #1045 - Edifício Solaris</td>
+                    <td>Receita</td>
+                    <td>25/08/2026</td>
+                    <td><span class="status in-progress">Hoje</span></td>
+                    <td>R$ 3.600</td>
+                  </tr>
+                  <tr>
+                    <td>#PAG-072</td>
+                    <td>Compra de disjuntores e cabos</td>
+                    <td>Despesa</td>
+                    <td>26/08/2026</td>
+                    <td><span class="status pending">A pagar</span></td>
+                    <td>R$ 1.840</td>
+                  </tr>
+                  <tr>
+                    <td>#PAG-071</td>
+                    <td>Combustível e deslocamento</td>
+                    <td>Despesa</td>
+                    <td>24/08/2026</td>
+                    <td><span class="status completed">Pago</span></td>
+                    <td>R$ 620</td>
+                  </tr>
+                  <tr>
+                    <td>#REC-116</td>
+                    <td>Casa Almeida - Instalação 220V</td>
+                    <td>Receita</td>
+                    <td>24/08/2026</td>
+                    <td><span class="status completed">Recebido</span></td>
+                    <td>R$ 890</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="finance-side">
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Fluxo de caixa</p>
+                  <h2>Previsão semanal</h2>
+                </div>
+                <span class="panel-badge">7 dias</span>
+              </div>
+              <div class="cashflow-list" aria-label="Previsão fictícia de fluxo de caixa">
+                <div class="cashflow-item positive">
+                  <span>Entradas previstas</span>
+                  <strong>R$ 18.740</strong>
+                </div>
+                <div class="cashflow-item negative">
+                  <span>Saídas previstas</span>
+                  <strong>R$ 7.320</strong>
+                </div>
+                <div class="cashflow-item total">
+                  <span>Saldo projetado</span>
+                  <strong>R$ 11.420</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Pendências</p>
+                  <h2>Cobranças e pagamentos</h2>
+                </div>
+                <span class="panel-badge muted">Hoje</span>
+              </div>
+              <div class="note-list">
+                <div class="note-item">
+                  <strong>Cobrar Edifício Solaris</strong>
+                  <span>Vencimento hoje - R$ 3.600</span>
+                </div>
+                <div class="note-item">
+                  <strong>Pagar fornecedor elétrico</strong>
+                  <span>Compra de materiais - R$ 1.840</span>
+                </div>
+                <div class="note-item">
+                  <strong>Conferir repasse técnico</strong>
+                  <span>Serviços concluídos da semana</span>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view-screen" id="manutencoes" data-screen="manutencoes">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Preventiva e corretiva</p>
+            <h1>Manutenções</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">+</span>
+            Nova manutenção
+          </button>
+        </header>
+
+        <section class="maintenance-summary-grid" aria-label="Resumo de manutenções">
+          <article class="summary-card">
+            <div class="card-icon service"></div>
+            <span>Planos ativos</span>
+            <strong>18</strong>
+            <small>Clientes com recorrência</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Preventivas agendadas</span>
+            <strong>11</strong>
+            <small>Próximos 30 dias</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon done"></div>
+            <span>Concluídas no mês</span>
+            <strong>26</strong>
+            <small>Rotinas finalizadas</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon revenue"></div>
+            <span>Receita recorrente</span>
+            <strong>R$ 14.800</strong>
+            <small>Valor fictício mensal</small>
+          </article>
+        </section>
+
+        <section class="maintenance-layout">
+          <article class="panel maintenance-table-panel">
+            <div class="panel-header client-panel-header">
+              <div>
+                <p class="eyebrow">Contratos e chamados</p>
+                <h2>Manutenções cadastradas</h2>
+              </div>
+              <div class="client-tools" aria-label="Filtros visuais de manutenções">
+                <label class="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input type="search" placeholder="Buscar manutenção" aria-label="Buscar manutenção">
+                </label>
+                <select aria-label="Filtrar manutenção">
+                  <option>Todas</option>
+                  <option>Preventivas</option>
+                  <option>Corretivas</option>
+                  <option>Vencendo</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="maintenance-table">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Cliente</th>
+                    <th>Tipo</th>
+                    <th>Periodicidade</th>
+                    <th>Próxima visita</th>
+                    <th>Status</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#MN-084</td>
+                    <td>Clínica São Bento</td>
+                    <td>Preventiva</td>
+                    <td>Mensal</td>
+                    <td>28/08/2026</td>
+                    <td><span class="status pending">Agendada</span></td>
+                    <td>R$ 2.150</td>
+                  </tr>
+                  <tr>
+                    <td>#MN-083</td>
+                    <td>Edifício Solaris</td>
+                    <td>Corretiva</td>
+                    <td>Avulsa</td>
+                    <td>25/08/2026</td>
+                    <td><span class="status in-progress">Em execução</span></td>
+                    <td>R$ 3.600</td>
+                  </tr>
+                  <tr>
+                    <td>#MN-082</td>
+                    <td>Mercado Bom Preço</td>
+                    <td>Preventiva</td>
+                    <td>Quinzenal</td>
+                    <td>02/09/2026</td>
+                    <td><span class="status completed">Em dia</span></td>
+                    <td>R$ 1.890</td>
+                  </tr>
+                  <tr>
+                    <td>#MN-081</td>
+                    <td>Oficina Delta</td>
+                    <td>Preventiva</td>
+                    <td>Mensal</td>
+                    <td>30/08/2026</td>
+                    <td><span class="status pending">Vencendo</span></td>
+                    <td>R$ 1.720</td>
+                  </tr>
+                  <tr>
+                    <td>#MN-080</td>
+                    <td>Condomínio Jardim Norte</td>
+                    <td>Preventiva</td>
+                    <td>Bimestral</td>
+                    <td>06/09/2026</td>
+                    <td><span class="status completed">Em dia</span></td>
+                    <td>R$ 2.980</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="maintenance-side">
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Próximas rotinas</p>
+                  <h2>Fila de manutenção</h2>
+                </div>
+                <span class="panel-badge">Semana</span>
+              </div>
+              <div class="inspection-list">
+                <div class="inspection-item high">
+                  <time>Hoje</time>
+                  <div>
+                    <strong>Edifício Solaris</strong>
+                    <span>Correção no quadro principal</span>
+                  </div>
+                </div>
+                <div class="inspection-item medium">
+                  <time>28/08</time>
+                  <div>
+                    <strong>Clínica São Bento</strong>
+                    <span>Preventiva mensal programada</span>
+                  </div>
+                </div>
+                <div class="inspection-item normal">
+                  <time>30/08</time>
+                  <div>
+                    <strong>Oficina Delta</strong>
+                    <span>Revisão de painel e aterramento</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Indicadores</p>
+                  <h2>Saúde dos contratos</h2>
+                </div>
+                <span class="panel-badge muted">Visual</span>
+              </div>
+              <div class="proposal-stages" aria-label="Indicadores visuais de manutenções">
+                <div class="stage-row">
+                  <span>Em dia</span>
+                  <div><i style="width: 72%"></i></div>
+                  <strong>13</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Vencendo</span>
+                  <div><i style="width: 28%"></i></div>
+                  <strong>5</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Corretivas</span>
+                  <div><i style="width: 18%"></i></div>
+                  <strong>3</strong>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view-screen" id="relatorios" data-screen="relatorios">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Análise gerencial</p>
+            <h1>Relatórios</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">↓</span>
+            Exportar
+          </button>
+        </header>
+
+        <section class="report-summary-grid" aria-label="Resumo de relatórios">
+          <article class="summary-card">
+            <div class="card-icon service"></div>
+            <span>Serviços realizados</span>
+            <strong>52</strong>
+            <small>Execuções fictícias no mês</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon clients"></div>
+            <span>Clientes atendidos</span>
+            <strong>34</strong>
+            <small>Residencial, comercial e condomínio</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon revenue"></div>
+            <span>Faturamento analisado</span>
+            <strong>R$ 41.920</strong>
+            <small>Total visual do período</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon profit"></div>
+            <span>Margem do mês</span>
+            <strong>60,6%</strong>
+            <small>Resultado fictício calculado</small>
+          </article>
+        </section>
+
+        <section class="report-layout">
+          <article class="panel report-table-panel">
+            <div class="panel-header client-panel-header">
+              <div>
+                <p class="eyebrow">Indicadores</p>
+                <h2>Desempenho por área</h2>
+              </div>
+              <div class="client-tools" aria-label="Filtros visuais de relatórios">
+                <select aria-label="Filtrar período">
+                  <option>Este mês</option>
+                  <option>Últimos 30 dias</option>
+                  <option>Últimos 90 dias</option>
+                </select>
+                <select aria-label="Filtrar relatório">
+                  <option>Todos os relatórios</option>
+                  <option>Operacional</option>
+                  <option>Financeiro</option>
+                  <option>Clientes</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="report-table">
+                <thead>
+                  <tr>
+                    <th>Área</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Variação</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ordens de Serviço</td>
+                    <td>52</td>
+                    <td>R$ 31.260</td>
+                    <td>+12%</td>
+                    <td><span class="status completed">Bom</span></td>
+                  </tr>
+                  <tr>
+                    <td>Orçamentos</td>
+                    <td>17</td>
+                    <td>R$ 42.860</td>
+                    <td>+8%</td>
+                    <td><span class="status in-progress">Atenção</span></td>
+                  </tr>
+                  <tr>
+                    <td>Manutenções</td>
+                    <td>26</td>
+                    <td>R$ 14.800</td>
+                    <td>+5%</td>
+                    <td><span class="status completed">Estável</span></td>
+                  </tr>
+                  <tr>
+                    <td>Materiais</td>
+                    <td>248</td>
+                    <td>R$ 18.930</td>
+                    <td>-3%</td>
+                    <td><span class="status pending">Reposição</span></td>
+                  </tr>
+                  <tr>
+                    <td>Financeiro</td>
+                    <td>31</td>
+                    <td>R$ 25.440</td>
+                    <td>+15%</td>
+                    <td><span class="status completed">Positivo</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="report-side">
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Operacional</p>
+                  <h2>Serviços por tipo</h2>
+                </div>
+                <span class="panel-badge">Mês</span>
+              </div>
+              <div class="proposal-stages" aria-label="Serviços por tipo">
+                <div class="stage-row">
+                  <span>Instalação</span>
+                  <div><i style="width: 62%"></i></div>
+                  <strong>24</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Manutenção</span>
+                  <div><i style="width: 48%"></i></div>
+                  <strong>18</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Emergência</span>
+                  <div><i style="width: 24%"></i></div>
+                  <strong>10</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Leituras rápidas</p>
+                  <h2>Pontos de atenção</h2>
+                </div>
+                <span class="panel-badge muted">Visual</span>
+              </div>
+              <div class="note-list">
+                <div class="note-item">
+                  <strong>Materiais com estoque baixo</strong>
+                  <span>12 itens abaixo do mínimo cadastrado</span>
+                </div>
+                <div class="note-item">
+                  <strong>Orçamentos aguardando retorno</strong>
+                  <span>8 propostas precisam de acompanhamento</span>
+                </div>
+                <div class="note-item">
+                  <strong>Manutenções vencendo</strong>
+                  <span>5 rotinas previstas para os próximos dias</span>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view-screen" id="configuracoes" data-screen="configuracoes">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Parâmetros do sistema</p>
+            <h1>Configurações</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">✓</span>
+            Salvar visual
+          </button>
+        </header>
+
+        <section class="settings-summary-grid" aria-label="Resumo de configurações">
+          <article class="summary-card">
+            <div class="card-icon clients"></div>
+            <span>Usuários fictícios</span>
+            <strong>6</strong>
+            <small>Perfis visuais cadastrados</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon service"></div>
+            <span>Equipes técnicas</span>
+            <strong>3</strong>
+            <small>Times operacionais simulados</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Modelos de documento</span>
+            <strong>4</strong>
+            <small>OS, orçamento, visita e relatório</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon done"></div>
+            <span>Status visual</span>
+            <strong>Ativo</strong>
+            <small>Ambiente visual estático</small>
+          </article>
+        </section>
+
+        <section class="settings-layout">
+          <article class="panel settings-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Empresa</p>
+                <h2>Dados da CJ Elétrica</h2>
+              </div>
+              <span class="panel-badge">Visual</span>
+            </div>
+            <div class="settings-form-grid">
+              <label class="field-box">
+                <span>Nome da empresa</span>
+                <input type="text" placeholder="Preencher depois" aria-label="Nome da empresa">
+              </label>
+              <label class="field-box">
+                <span>CNPJ</span>
+                <input type="text" placeholder="Preencher depois" aria-label="CNPJ">
+              </label>
+              <label class="field-box">
+                <span>Telefone</span>
+                <input type="text" placeholder="Preencher depois" aria-label="Telefone">
+              </label>
+              <label class="field-box">
+                <span>E-mail</span>
+                <input type="email" placeholder="Preencher depois" aria-label="E-mail">
+              </label>
+            </div>
+          </article>
+
+          <aside class="settings-side">
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Idioma</p>
+                  <h2>Idioma do sistema</h2>
+                </div>
+                <span class="panel-badge">Português</span>
+              </div>
+              <div class="language-list" aria-label="Opções visuais de idioma">
+                <button class="language-option active" type="button">
+                  <strong>Português (Brasil)</strong>
+                  <span>Selecionado</span>
+                </button>
+                <button class="language-option" type="button">
+                  <strong>English</strong>
+                  <span>Disponível visualmente</span>
+                </button>
+                <button class="language-option" type="button">
+                  <strong>Español</strong>
+                  <span>Disponível visualmente</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Preferências</p>
+                  <h2>Operação do sistema</h2>
+                </div>
+                <span class="panel-badge muted">Fictício</span>
+              </div>
+              <div class="settings-toggle-list">
+                <div class="toggle-row">
+                  <div>
+                    <strong>Notificar visitas do dia</strong>
+                    <span>Alerta visual para agenda técnica</span>
+                  </div>
+                  <span class="fake-toggle active" aria-hidden="true"></span>
+                </div>
+                <div class="toggle-row">
+                  <div>
+                    <strong>Controle de estoque baixo</strong>
+                    <span>Destaca materiais abaixo do mínimo</span>
+                  </div>
+                  <span class="fake-toggle active" aria-hidden="true"></span>
+                </div>
+                <div class="toggle-row">
+                  <div>
+                    <strong>Modo financeiro simplificado</strong>
+                    <span>Mostra recebimentos e despesas resumidos</span>
+                  </div>
+                  <span class="fake-toggle" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </section>
+
+        <section class="settings-bottom-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Acessos</p>
+                <h2>Usuários do sistema</h2>
+              </div>
+              <span class="panel-badge">6 perfis</span>
+            </div>
+            <div class="table-wrap">
+              <table class="settings-table">
+                <thead>
+                  <tr>
+                    <th>Usuário</th>
+                    <th>Perfil</th>
+                    <th>Área</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Admin CJ</td>
+                    <td>Administrador</td>
+                    <td>Geral</td>
+                    <td><span class="status completed">Ativo</span></td>
+                  </tr>
+                  <tr>
+                    <td>Marcos Técnico</td>
+                    <td>Técnico</td>
+                    <td>Campo</td>
+                    <td><span class="status completed">Ativo</span></td>
+                  </tr>
+                  <tr>
+                    <td>Elaine Atendimento</td>
+                    <td>Operador</td>
+                    <td>Clientes</td>
+                    <td><span class="status in-progress">Pendente</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Modelos</p>
+                <h2>Documentos padrão</h2>
+              </div>
+              <span class="panel-badge muted">HTML</span>
+            </div>
+            <div class="note-list">
+              <div class="note-item">
+                <strong>Modelo de orçamento</strong>
+                <span>Cabeçalho, itens, valores e aceite</span>
+              </div>
+              <div class="note-item">
+                <strong>Modelo de ordem de serviço</strong>
+                <span>Cliente, técnico, materiais e assinatura</span>
+              </div>
+              <div class="note-item">
+                <strong>Modelo de visita técnica</strong>
+                <span>Checklist, fotos e observações</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="view-screen" id="agenda" data-screen="agenda">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div>
+            <p class="eyebrow">Programação técnica</p>
+            <h1>Agenda</h1>
+          </div>
+
+          <button class="primary-action" type="button">
+            <span aria-hidden="true">+</span>
+            Novo agendamento
+          </button>
+        </header>
+
+        <section class="agenda-summary-grid" aria-label="Resumo da agenda">
+          <article class="summary-card">
+            <div class="card-icon service"></div>
+            <span>Serviços hoje</span>
+            <strong>8</strong>
+            <small>4 visitas e 4 execuções</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon done"></div>
+            <span>Concluídos hoje</span>
+            <strong>3</strong>
+            <small>Atualização visual fictícia</small>
+          </article>
+          <article class="summary-card">
+            <div class="card-icon budget"></div>
+            <span>Orçamentos agendados</span>
+            <strong>5</strong>
+            <small>Clientes aguardando visita</small>
+          </article>
+          <article class="summary-card highlight">
+            <div class="card-icon clients"></div>
+            <span>Técnicos em campo</span>
+            <strong>6</strong>
+            <small>Equipe distribuída por região</small>
+          </article>
+        </section>
+
+        <section class="agenda-layout">
+          <article class="panel calendar-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Calendário</p>
+                <h2>Agosto 2026</h2>
+              </div>
+              <span class="panel-badge">Visual</span>
+            </div>
+
+            <div class="calendar-grid" aria-label="Calendário visual de agosto de 2026">
+              <span class="weekday">Seg</span>
+              <span class="weekday">Ter</span>
+              <span class="weekday">Qua</span>
+              <span class="weekday">Qui</span>
+              <span class="weekday">Sex</span>
+              <span class="weekday">Sáb</span>
+              <span class="weekday">Dom</span>
+
+              <span class="calendar-day muted">27</span>
+              <span class="calendar-day muted">28</span>
+              <span class="calendar-day muted">29</span>
+              <span class="calendar-day muted">30</span>
+              <span class="calendar-day muted">31</span>
+              <span class="calendar-day">1</span>
+              <span class="calendar-day">2</span>
+              <span class="calendar-day">3</span>
+              <span class="calendar-day">4</span>
+              <span class="calendar-day has-event">5</span>
+              <span class="calendar-day">6</span>
+              <span class="calendar-day">7</span>
+              <span class="calendar-day">8</span>
+              <span class="calendar-day">9</span>
+              <span class="calendar-day has-event">10</span>
+              <span class="calendar-day">11</span>
+              <span class="calendar-day">12</span>
+              <span class="calendar-day has-event">13</span>
+              <span class="calendar-day">14</span>
+              <span class="calendar-day">15</span>
+              <span class="calendar-day">16</span>
+              <span class="calendar-day">17</span>
+              <span class="calendar-day has-event">18</span>
+              <span class="calendar-day">19</span>
+              <span class="calendar-day">20</span>
+              <span class="calendar-day">21</span>
+              <span class="calendar-day has-event">22</span>
+              <span class="calendar-day">23</span>
+              <span class="calendar-day">24</span>
+              <span class="calendar-day today has-event">25</span>
+              <span class="calendar-day has-event">26</span>
+              <span class="calendar-day">27</span>
+              <span class="calendar-day has-event">28</span>
+              <span class="calendar-day">29</span>
+              <span class="calendar-day">30</span>
+              <span class="calendar-day">31</span>
+              <span class="calendar-day muted">1</span>
+              <span class="calendar-day muted">2</span>
+              <span class="calendar-day muted">3</span>
+              <span class="calendar-day muted">4</span>
+              <span class="calendar-day muted">5</span>
+              <span class="calendar-day muted">6</span>
+            </div>
+          </article>
+
+          <article class="panel day-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Terça-feira</p>
+                <h2>Agenda de hoje</h2>
+              </div>
+              <span class="panel-badge muted">25/08/2026</span>
+            </div>
+
+            <div class="timeline-list">
+              <div class="timeline-item high">
+                <time datetime="2026-08-25T08:30">08:30</time>
+                <div>
+                  <strong>Instalação de quadro elétrico</strong>
+                  <span>Condomínio Jardim Norte - Marcos e Diego</span>
+                </div>
+                <span class="priority high">Alta</span>
+              </div>
+              <div class="timeline-item medium">
+                <time datetime="2026-08-25T10:00">10:00</time>
+                <div>
+                  <strong>Visita técnica para orçamento</strong>
+                  <span>Loja Prime Center - Elaine</span>
+                </div>
+                <span class="priority medium">Média</span>
+              </div>
+              <div class="timeline-item normal">
+                <time datetime="2026-08-25T13:30">13:30</time>
+                <div>
+                  <strong>Manutenção preventiva</strong>
+                  <span>Clínica São Bento - Roberto</span>
+                </div>
+                <span class="priority normal">Normal</span>
+              </div>
+              <div class="timeline-item high">
+                <time datetime="2026-08-25T16:00">16:00</time>
+                <div>
+                  <strong>Troca de disjuntores</strong>
+                  <span>Residencial Vila Clara - Marcos</span>
+                </div>
+                <span class="priority high">Alta</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel agenda-table-panel">
+          <div class="panel-header client-panel-header">
+            <div>
+              <p class="eyebrow">Próximos dias</p>
+              <h2>Agendamentos futuros</h2>
+            </div>
+            <div class="client-tools" aria-label="Filtros visuais da agenda">
+              <select aria-label="Filtrar técnico">
+                <option>Todos os técnicos</option>
+                <option>Marcos</option>
+                <option>Elaine</option>
+                <option>Roberto</option>
+              </select>
+              <select aria-label="Filtrar tipo">
+                <option>Todos os tipos</option>
+                <option>Visita técnica</option>
+                <option>Manutenção</option>
+                <option>Instalação</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="agenda-table">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Horário</th>
+                  <th>Cliente</th>
+                  <th>Serviço</th>
+                  <th>Técnico</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>26/08/2026</td>
+                  <td>09:00</td>
+                  <td>Oficina Delta</td>
+                  <td>Retorno de orçamento</td>
+                  <td>Elaine</td>
+                  <td><span class="status pending">Agendado</span></td>
+                </tr>
+                <tr>
+                  <td>26/08/2026</td>
+                  <td>14:30</td>
+                  <td>Edifício Solaris</td>
+                  <td>Revisão de emergência</td>
+                  <td>Roberto</td>
+                  <td><span class="status in-progress">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>27/08/2026</td>
+                  <td>08:00</td>
+                  <td>Casa Almeida</td>
+                  <td>Ajuste de tomada 220V</td>
+                  <td>Marcos</td>
+                  <td><span class="status completed">Confirmado</span></td>
+                </tr>
+                <tr>
+                  <td>28/08/2026</td>
+                  <td>11:00</td>
+                  <td>Mercado Bom Preço</td>
+                  <td>Manutenção preventiva</td>
+                  <td>Diego</td>
+                  <td><span class="status pending">Agendado</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js?v=14"></script>
+</body>
+</html>
