@@ -31,7 +31,7 @@ async function listarClientes() {
     throw error;
   }
 
-  return data;
+  return data || [];
 }
 
 async function buscarClientePorId(id) {
