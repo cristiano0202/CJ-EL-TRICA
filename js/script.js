@@ -2,6 +2,8 @@ const body = document.body;
 const menuToggles = document.querySelectorAll(".menu-toggle");
 const closeTargets = document.querySelectorAll("[data-close-menu], .sidebar .nav-item");
 const loginStorageKey = "cj-eletrica-login-visual";
+const loginSessionKey = "cj-eletrica-sessao-login";
+const loginUsersKey = "cj-eletrica-usuarios-login";
 
 function setMenuState(isOpen) {
   body.classList.toggle("menu-open", isOpen);
@@ -100,7 +102,48 @@ const initialScreen = window.location.hash.replace("#", "") || "dashboard";
 showScreen(initialScreen) || showScreen("dashboard");
 
 function usuarioLogadoVisualmente() {
-  return localStorage.getItem(loginStorageKey) === "true" || sessionStorage.getItem(loginStorageKey) === "true";
+  return Boolean(
+    localStorage.getItem(loginSessionKey) ||
+    sessionStorage.getItem(loginSessionKey) ||
+    localStorage.getItem(loginStorageKey) === "true" ||
+    sessionStorage.getItem(loginStorageKey) === "true"
+  );
+}
+
+function emailNormalizado(email) {
+  return String(email || "").trim().toLowerCase();
+}
+
+function lerUsuariosLogin() {
+  try {
+    const usuarios = JSON.parse(localStorage.getItem(loginUsersKey) || "[]");
+    return Array.isArray(usuarios) ? usuarios : [];
+  } catch (error) {
+    return [];
+  }
+}
+
+function salvarUsuariosLogin(usuarios) {
+  localStorage.setItem(loginUsersKey, JSON.stringify(usuarios));
+}
+
+function criarSessaoLogin(usuario, lembrar) {
+  const sessao = JSON.stringify({
+    nome: usuario.nome,
+    email: usuario.email,
+    data: new Date().toISOString()
+  });
+
+  localStorage.removeItem(loginStorageKey);
+  sessionStorage.removeItem(loginStorageKey);
+  localStorage.removeItem(loginSessionKey);
+  sessionStorage.removeItem(loginSessionKey);
+
+  if (lembrar) {
+    localStorage.setItem(loginSessionKey, sessao);
+  } else {
+    sessionStorage.setItem(loginSessionKey, sessao);
+  }
 }
 
 function mostrarSistema() {
@@ -123,13 +166,45 @@ function mostrarLogin() {
   window.setTimeout(() => email?.focus(), 80);
 }
 
+function alternarModoLogin(modo) {
+  const formLogin = document.querySelector("[data-login-form]");
+  const formCadastro = document.querySelector("[data-register-form]");
+  const botaoCadastro = document.querySelector("[data-show-register]");
+  const botaoLogin = document.querySelector("[data-show-login]");
+  const titulo = document.querySelector("[data-login-title]");
+  const subtitulo = document.querySelector("[data-login-subtitle]");
+  const loginFeedback = document.querySelector("[data-login-feedback]");
+  const cadastroFeedback = document.querySelector("[data-register-feedback]");
+  const cadastroAtivo = modo === "cadastro";
+
+  if (!formLogin || !formCadastro) {
+    return;
+  }
+
+  formLogin.hidden = cadastroAtivo;
+  formCadastro.hidden = !cadastroAtivo;
+  botaoCadastro.hidden = cadastroAtivo;
+  botaoLogin.hidden = !cadastroAtivo;
+  titulo.textContent = cadastroAtivo ? "Criar usuário" : "Entrar";
+  subtitulo.textContent = cadastroAtivo ? "Cadastre um acesso local" : "Área operacional da CJ Elétrica";
+  loginFeedback.textContent = "";
+  cadastroFeedback.textContent = "";
+
+  const foco = cadastroAtivo ? formCadastro.elements.nome : formLogin.elements.email;
+  window.setTimeout(() => foco?.focus(), 80);
+}
+
 function configurarLoginVisual() {
   const form = document.querySelector("[data-login-form]");
-  const demo = document.querySelector("[data-demo-login]");
+  const registerForm = document.querySelector("[data-register-form]");
   const feedback = document.querySelector("[data-login-feedback]");
+  const registerFeedback = document.querySelector("[data-register-feedback]");
+  const showRegister = document.querySelector("[data-show-register]");
+  const showLogin = document.querySelector("[data-show-login]");
+  const forgot = document.querySelector("[data-login-forgot]");
   const logoutButtons = document.querySelectorAll("[data-logout]");
 
-  if (!form) {
+  if (!form || !registerForm) {
     return;
   }
 
@@ -142,7 +217,7 @@ function configurarLoginVisual() {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const email = form.elements.email.value.trim();
+    const email = emailNormalizado(form.elements.email.value);
     const senha = form.elements.senha.value.trim();
     const lembrar = form.elements.lembrar.checked;
 
@@ -151,26 +226,88 @@ function configurarLoginVisual() {
       return;
     }
 
-    feedback.textContent = "";
+    const usuario = lerUsuariosLogin().find((item) => item.email === email);
 
-    if (lembrar) {
-      localStorage.setItem(loginStorageKey, "true");
-    } else {
-      sessionStorage.setItem(loginStorageKey, "true");
+    if (!usuario) {
+      feedback.textContent = "Usuário não encontrado. Crie um usuário primeiro.";
+      return;
     }
 
+    if (usuario.senha !== senha) {
+      feedback.textContent = "Senha incorreta.";
+      return;
+    }
+
+    feedback.textContent = "";
+    criarSessaoLogin(usuario, lembrar);
     mostrarSistema();
   });
 
-  demo?.addEventListener("click", () => {
-    sessionStorage.setItem(loginStorageKey, "true");
-    mostrarSistema();
+  registerForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nome = registerForm.elements.nome.value.trim();
+    const email = emailNormalizado(registerForm.elements.email.value);
+    const senha = registerForm.elements.senha.value.trim();
+    const confirmarSenha = registerForm.elements.confirmarSenha.value.trim();
+    const entrar = registerForm.elements.entrar.checked;
+    const usuarios = lerUsuariosLogin();
+
+    if (!nome || !email || !senha || !confirmarSenha) {
+      registerFeedback.textContent = "Preencha todos os campos.";
+      return;
+    }
+
+    if (senha.length < 4) {
+      registerFeedback.textContent = "A senha precisa ter pelo menos 4 caracteres.";
+      return;
+    }
+
+    if (senha !== confirmarSenha) {
+      registerFeedback.textContent = "As senhas não conferem.";
+      return;
+    }
+
+    if (usuarios.some((usuario) => usuario.email === email)) {
+      registerFeedback.textContent = "Este e-mail já foi cadastrado.";
+      return;
+    }
+
+    const novoUsuario = {
+      id: `usuario-${Date.now()}`,
+      nome,
+      email,
+      senha,
+      criadoEm: new Date().toISOString()
+    };
+
+    salvarUsuariosLogin([...usuarios, novoUsuario]);
+    registerFeedback.textContent = "";
+
+    if (entrar) {
+      criarSessaoLogin(novoUsuario, true);
+      mostrarSistema();
+      return;
+    }
+
+    alternarModoLogin("login");
+    form.elements.email.value = email;
+    form.elements.senha.value = "";
+    feedback.textContent = "Usuário criado. Digite a senha para entrar.";
+  });
+
+  showRegister?.addEventListener("click", () => alternarModoLogin("cadastro"));
+  showLogin?.addEventListener("click", () => alternarModoLogin("login"));
+  forgot?.addEventListener("click", () => {
+    feedback.textContent = "Recuperação de senha será ligada ao banco depois.";
   });
 
   logoutButtons.forEach((button) => {
     button.addEventListener("click", () => {
       localStorage.removeItem(loginStorageKey);
       sessionStorage.removeItem(loginStorageKey);
+      localStorage.removeItem(loginSessionKey);
+      sessionStorage.removeItem(loginSessionKey);
       mostrarLogin();
     });
   });
