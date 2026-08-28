@@ -1941,11 +1941,10 @@ tbody tr:hover {
   }
 }
 .brand-logo {
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
   object-fit: contain;
   border-radius: 8px;
-  background: var(--yellow);
-  padding: 4px;
-  box-shadow: 0 0 0 5px rgba(255, 212, 0, 0.16);
+  background: #111111;
+  padding: 3px;
 }
