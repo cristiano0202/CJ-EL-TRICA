@@ -2,7 +2,8 @@ const body = document.body;
 const menuToggles = document.querySelectorAll(".menu-toggle");
 const closeTargets = document.querySelectorAll("[data-close-menu], .sidebar .nav-item");
 const loginStorageKey = "cj-eletrica-login-visual";
-const loginSessionKey = "cj-eletrica-sessao-login";
+const legacyLoginSessionKey = "cj-eletrica-sessao-login";
+const loginSessionKey = "cj-eletrica-sessao-login-v2";
 const loginUsersKey = "cj-eletrica-usuarios-login";
 
 function setMenuState(isOpen) {
@@ -104,10 +105,17 @@ showScreen(initialScreen) || showScreen("dashboard");
 function usuarioLogadoVisualmente() {
   return Boolean(
     localStorage.getItem(loginSessionKey) ||
-    sessionStorage.getItem(loginSessionKey) ||
-    localStorage.getItem(loginStorageKey) === "true" ||
-    sessionStorage.getItem(loginStorageKey) === "true"
+    sessionStorage.getItem(loginSessionKey)
   );
+}
+
+function limparSessoesLogin() {
+  localStorage.removeItem(loginStorageKey);
+  sessionStorage.removeItem(loginStorageKey);
+  localStorage.removeItem(legacyLoginSessionKey);
+  sessionStorage.removeItem(legacyLoginSessionKey);
+  localStorage.removeItem(loginSessionKey);
+  sessionStorage.removeItem(loginSessionKey);
 }
 
 function emailNormalizado(email) {
@@ -134,10 +142,7 @@ function criarSessaoLogin(usuario, lembrar) {
     data: new Date().toISOString()
   });
 
-  localStorage.removeItem(loginStorageKey);
-  sessionStorage.removeItem(loginStorageKey);
-  localStorage.removeItem(loginSessionKey);
-  sessionStorage.removeItem(loginSessionKey);
+  limparSessoesLogin();
 
   if (lembrar) {
     localStorage.setItem(loginSessionKey, sessao);
@@ -250,7 +255,6 @@ function configurarLoginVisual() {
     const email = emailNormalizado(registerForm.elements.email.value);
     const senha = registerForm.elements.senha.value.trim();
     const confirmarSenha = registerForm.elements.confirmarSenha.value.trim();
-    const entrar = registerForm.elements.entrar.checked;
     const usuarios = lerUsuariosLogin();
 
     if (!nome || !email || !senha || !confirmarSenha) {
@@ -283,12 +287,7 @@ function configurarLoginVisual() {
 
     salvarUsuariosLogin([...usuarios, novoUsuario]);
     registerFeedback.textContent = "";
-
-    if (entrar) {
-      criarSessaoLogin(novoUsuario, true);
-      mostrarSistema();
-      return;
-    }
+    limparSessoesLogin();
 
     alternarModoLogin("login");
     form.elements.email.value = email;
@@ -304,10 +303,7 @@ function configurarLoginVisual() {
 
   logoutButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      localStorage.removeItem(loginStorageKey);
-      sessionStorage.removeItem(loginStorageKey);
-      localStorage.removeItem(loginSessionKey);
-      sessionStorage.removeItem(loginSessionKey);
+      limparSessoesLogin();
       mostrarLogin();
     });
   });
