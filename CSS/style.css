@@ -1960,10 +1960,20 @@ tbody tr:hover {
 
 #clientes .topbar .primary-action,
 #visitas .topbar .primary-action,
+#orcamentos .topbar .primary-action,
+#ordens .topbar .primary-action,
+#materiais .topbar .primary-action,
+#financeiro .topbar .primary-action,
+#manutencoes .topbar .primary-action,
+#agenda .topbar .primary-action,
+#relatorios .topbar .primary-action,
+#configuracoes .topbar .primary-action,
 .client-modal .primary-action,
 .client-modal .secondary-action,
 .client-refresh-action,
 .visit-refresh-action,
+.budget-refresh-action,
+.module-refresh-action,
 .table-action,
 .icon-action {
   cursor: pointer;
@@ -1992,6 +2002,14 @@ tbody tr:hover {
 }
 
 .visit-refresh-action {
+  white-space: nowrap;
+}
+
+.budget-refresh-action {
+  white-space: nowrap;
+}
+
+.module-refresh-action {
   white-space: nowrap;
 }
 
@@ -2026,6 +2044,31 @@ tbody tr:hover {
 
 .visit-table {
   min-width: 1080px;
+}
+
+.budget-table {
+  min-width: 1080px;
+}
+
+.order-table,
+.material-table,
+.finance-table,
+.maintenance-table,
+.agenda-table {
+  min-width: 1080px;
+}
+
+.module-modal .client-modal-panel {
+  width: min(760px, 100%);
+}
+
+.settings-form-grid input[name] {
+  background: var(--white);
+}
+
+.language-option,
+.toggle-row {
+  cursor: pointer;
 }
 
 .client-modal[hidden] {
@@ -2131,12 +2174,28 @@ body.client-modal-open {
 
 @media (max-width: 820px) {
   #clientes .topbar,
-  #visitas .topbar {
+  #visitas .topbar,
+  #orcamentos .topbar,
+  #ordens .topbar,
+  #materiais .topbar,
+  #financeiro .topbar,
+  #manutencoes .topbar,
+  #agenda .topbar,
+  #relatorios .topbar,
+  #configuracoes .topbar {
     flex-wrap: wrap;
   }
 
   #clientes .topbar .primary-action,
-  #visitas .topbar .primary-action {
+  #visitas .topbar .primary-action,
+  #orcamentos .topbar .primary-action,
+  #ordens .topbar .primary-action,
+  #materiais .topbar .primary-action,
+  #financeiro .topbar .primary-action,
+  #manutencoes .topbar .primary-action,
+  #agenda .topbar .primary-action,
+  #relatorios .topbar .primary-action,
+  #configuracoes .topbar .primary-action {
     display: inline-flex;
     width: 100%;
   }
