@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CJ Elétrica | Login</title>
-<link rel="stylesheet" href="./CSS/style.css?v=23">
+<link rel="stylesheet" href="./CSS/style.css?v=27">
 </head>
 <body class="login-locked">
   <section class="login-screen" data-login-screen aria-label="Login CJ Elétrica">
@@ -19,32 +19,69 @@
     <div class="login-card">
       <div class="login-card-header">
         <span class="login-chip">Acesso do sistema</span>
-        <h1>Entrar</h1>
-        <p>Área operacional da CJ Elétrica</p>
+        <h1 data-login-title>Entrar</h1>
+        <p data-login-subtitle>Área operacional da CJ Elétrica</p>
       </div>
 
       <form class="login-form" data-login-form>
-        <label class="login-field">
-          <span>E-mail</span>
-          <input type="email" name="email" placeholder="usuario@cjeletrica.com.br" autocomplete="username" required>
+        <label class="login-field" data-login-icon="user">
+          <span>Usuário</span>
+          <input type="text" name="email" placeholder="E-mail cadastrado" autocomplete="username" required>
         </label>
 
-        <label class="login-field">
+        <label class="login-field" data-login-icon="lock">
           <span>Senha</span>
           <input type="password" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
         </label>
 
-        <label class="login-check">
-          <input type="checkbox" name="lembrar">
-          <span>Lembrar neste dispositivo</span>
-        </label>
+        <div class="login-options">
+          <label class="login-check">
+            <input type="checkbox" name="lembrar">
+            <span>Lembrar</span>
+          </label>
+          <button class="login-forgot" type="button" data-login-forgot>Esqueceu a senha?</button>
+        </div>
 
         <p class="login-feedback" data-login-feedback></p>
 
-        <button class="login-submit" type="submit">Entrar no sistema</button>
+        <button class="login-submit" type="submit">LOGIN</button>
       </form>
 
-      <button class="login-demo" type="button" data-demo-login>Entrar como demonstração</button>
+      <form class="login-form login-register-form" data-register-form hidden>
+        <label class="login-field" data-login-icon="user">
+          <span>Nome do usuário</span>
+          <input type="text" name="nome" placeholder="Nome completo" autocomplete="name" required>
+        </label>
+
+        <label class="login-field" data-login-icon="mail">
+          <span>E-mail</span>
+          <input type="email" name="email" placeholder="usuario@cjeletrica.com.br" autocomplete="username" required>
+        </label>
+
+        <label class="login-field" data-login-icon="lock">
+          <span>Senha</span>
+          <input type="password" name="senha" placeholder="Mínimo 4 caracteres" autocomplete="new-password" required>
+        </label>
+
+        <label class="login-field" data-login-icon="lock">
+          <span>Confirmar senha</span>
+          <input type="password" name="confirmarSenha" placeholder="Repita a senha" autocomplete="new-password" required>
+        </label>
+
+        <label class="login-check">
+          <input type="checkbox" name="entrar" checked>
+          <span>Entrar após criar</span>
+        </label>
+
+        <p class="login-feedback" data-register-feedback></p>
+
+        <button class="login-submit" type="submit">CRIAR USUÁRIO</button>
+      </form>
+
+      <div class="login-actions">
+        <button class="login-switch" type="button" data-show-register>Criar usuário</button>
+        <button class="login-switch" type="button" data-show-login hidden>Voltar para login</button>
+      </div>
     </div>
   </section>
 
@@ -2279,6 +2316,6 @@
 <script src="./js/visitas-ui.js?v=2"></script>
 <script src="./js/orcamentos-ui.js?v=1"></script>
 <script src="./js/modulos-restantes-ui.js?v=1"></script>
-<script src="./js/script.js?v=23"></script>
+<script src="./js/script.js?v=27"></script>
 </body>
 </html>
