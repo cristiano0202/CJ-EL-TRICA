@@ -1,6 +1,7 @@
 const body = document.body;
 const menuToggles = document.querySelectorAll(".menu-toggle");
 const closeTargets = document.querySelectorAll("[data-close-menu], .sidebar .nav-item");
+const loginStorageKey = "cj-eletrica-login-visual";
 
 function setMenuState(isOpen) {
   body.classList.toggle("menu-open", isOpen);
@@ -97,3 +98,82 @@ window.addEventListener("hashchange", () => {
 
 const initialScreen = window.location.hash.replace("#", "") || "dashboard";
 showScreen(initialScreen) || showScreen("dashboard");
+
+function usuarioLogadoVisualmente() {
+  return localStorage.getItem(loginStorageKey) === "true" || sessionStorage.getItem(loginStorageKey) === "true";
+}
+
+function mostrarSistema() {
+  body.classList.remove("login-locked");
+  document.title = "CJ Elétrica | Dashboard";
+
+  if (!window.location.hash) {
+    window.location.hash = "dashboard";
+  }
+
+  showScreen(window.location.hash.replace("#", "") || "dashboard");
+}
+
+function mostrarLogin() {
+  body.classList.add("login-locked");
+  setMenuState(false);
+  document.title = "CJ Elétrica | Login";
+
+  const email = document.querySelector("[data-login-form] input[name='email']");
+  window.setTimeout(() => email?.focus(), 80);
+}
+
+function configurarLoginVisual() {
+  const form = document.querySelector("[data-login-form]");
+  const demo = document.querySelector("[data-demo-login]");
+  const feedback = document.querySelector("[data-login-feedback]");
+  const logoutButtons = document.querySelectorAll("[data-logout]");
+
+  if (!form) {
+    return;
+  }
+
+  if (usuarioLogadoVisualmente()) {
+    mostrarSistema();
+  } else {
+    mostrarLogin();
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const email = form.elements.email.value.trim();
+    const senha = form.elements.senha.value.trim();
+    const lembrar = form.elements.lembrar.checked;
+
+    if (!email || !senha) {
+      feedback.textContent = "Informe e-mail e senha para continuar.";
+      return;
+    }
+
+    feedback.textContent = "";
+
+    if (lembrar) {
+      localStorage.setItem(loginStorageKey, "true");
+    } else {
+      sessionStorage.setItem(loginStorageKey, "true");
+    }
+
+    mostrarSistema();
+  });
+
+  demo?.addEventListener("click", () => {
+    sessionStorage.setItem(loginStorageKey, "true");
+    mostrarSistema();
+  });
+
+  logoutButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      localStorage.removeItem(loginStorageKey);
+      sessionStorage.removeItem(loginStorageKey);
+      mostrarLogin();
+    });
+  });
+}
+
+configurarLoginVisual();
