@@ -1947,6 +1947,7 @@ tbody tr:hover {
   border-radius: 8px;
   background: #111111;
   padding: 3px;
+  flex: 0 0 auto;
 }
 .imagem-servico {
   width: 100%;
