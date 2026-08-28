@@ -1940,3 +1940,12 @@ tbody tr:hover {
     font-size: 0.82rem;
   }
 }
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--yellow);
+  padding: 4px;
+  box-shadow: 0 0 0 5px rgba(255, 212, 0, 0.16);
+}
