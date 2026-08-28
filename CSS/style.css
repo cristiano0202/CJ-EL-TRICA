@@ -1948,3 +1948,10 @@ tbody tr:hover {
   background: #111111;
   padding: 3px;
 }
+.imagem-servico {
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
