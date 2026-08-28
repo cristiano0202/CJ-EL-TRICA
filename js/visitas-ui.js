@@ -356,7 +356,7 @@
     }
 
     elementos.corpoTabela.innerHTML = visitas.map((visita) => `
-      <tr>
+      <tr data-visit-row="${textoSeguro(visita.id)}" title="Clique para editar">
         <td>
           <strong>${textoSeguro(codigoVisita(visita))}</strong>
           <small>${textoSeguro(visita.prioridade || "Normal")}</small>
@@ -569,6 +569,14 @@
 
       if (excluir) {
         excluirVisita(excluir.dataset.visitDelete, elementos);
+        return;
+      }
+
+      const linha = event.target.closest("[data-visit-row]");
+
+      if (linha && elementos.tela.contains(linha)) {
+        const visita = estado.visitas.find((item) => item.id === linha.dataset.visitRow);
+        abrirModal(visita);
       }
     });
 
